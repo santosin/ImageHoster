@@ -13,6 +13,9 @@ public class CommentRepository {
     @PersistenceUnit(unitName = "imageHoster")
     private EntityManagerFactory emf;
 
+
+    // This method creates a new comment in the Data base, if comment is persisted correctly then
+    // comment is commited to data base. Else an exception is seen and transaction is rol backed.
     public Comment createComment(Comment comment) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction transaction = em.getTransaction();

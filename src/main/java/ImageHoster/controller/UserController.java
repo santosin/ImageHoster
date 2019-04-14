@@ -56,6 +56,9 @@ public class UserController {
 
     }
 
+
+    // This method is written to validate password, During refactoring move this to Util class.
+    // This will return false in case Paassword doesn't contain 1 alphabet, 1 digit and 1 special character.
     public boolean isPasswordValid(String password){
         if(!"".equals(password) && password != null) {
             String upperCaseChars = "(.*[A-Z].*)";

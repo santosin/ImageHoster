@@ -59,7 +59,9 @@ public class ImageController {
         return "images/image";
     }
 
-
+    // This controller method is called, when we try to add comment for a image.
+    // I have used a  pattern such that of images add comment for imageId  specified by imageId parameter.
+    // We are using HTTP session to get logged in user and using model to save data while redirect on comment submit button.
 
     @RequestMapping(value="/images/comments/{imageId}",method = RequestMethod.POST )
     public String addComment(@PathVariable("imageId") Integer id, @RequestParam("comment") String comment, Model model, HttpSession session) {
